@@ -31,9 +31,9 @@ class FeedFragment : NavHostFragment() {
         feedViewModel.post.observe(this) { post ->
             with(binding.postView.binding.header) {
                 authorNickname.text = post.authorNickname
-                authorNickname.setOnClickListener { view -> landToProfileFragment(post.authorProfileUrl) }
+                authorNickname.setOnClickListener { landToProfileFragment(post.authorProfileUrl) }
                 authorAvatar.setImageResource(R.drawable.ic_launcher_foreground)
-                authorAvatar.setOnClickListener { view -> landToProfileFragment(post.authorProfileUrl) }
+                authorAvatar.setOnClickListener { landToProfileFragment(post.authorProfileUrl) }
                 place.text = post.place
             }
             with(binding.postView.binding) {
