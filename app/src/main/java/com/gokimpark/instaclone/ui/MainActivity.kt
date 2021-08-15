@@ -46,20 +46,10 @@ class MainActivity : AppCompatActivity() {
             select(fragmentIndex)
         }
 
-        // val navController = findNavController(R.id.nav_host_fragment)
-        // // Passing each menu ID as a set of Ids because each
-        // // menu should be considered as top level destinations.
-        // val appBarConfiguration = AppBarConfiguration(
-        //     setOf(
-        //         R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-        //     )
-        // )
-        // setupActionBarWithNavController(navController, appBarConfiguration)
-        // binding.navView.setupWithNavController(navController)
         binding.navView.menu.forEachIndexed { index, item ->
             item.setOnMenuItemClickListener {
                 selectFragment(index)
-                true
+                false
             }
         }
     }
@@ -80,7 +70,6 @@ class MainActivity : AppCompatActivity() {
         detach(fragments[fragmentIndex].second)
         attach(fragments[index].second)
         fragmentIndex = index
-        // replace(R.id.nav_host_fragment, fragments[index].second)
     }
 
 
