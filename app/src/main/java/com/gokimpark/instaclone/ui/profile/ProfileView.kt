@@ -17,7 +17,11 @@ class ProfileView @JvmOverloads constructor(
     @StyleRes defStyleRes: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr, defStyleRes) {
 
-    private val binding = ViewProfileBinding.inflate(LayoutInflater.from(context), this)
+    private val adapter = GalleryAdapter()
+
+    private val binding = ViewProfileBinding.inflate(LayoutInflater.from(context), this).apply {
+        gallery.adapter = adapter
+    }
 
     fun setData(profile: Profile) {
         with(binding.header) {
@@ -26,9 +30,8 @@ class ProfileView @JvmOverloads constructor(
             followingCount.setData(profile.followingCount, "Following")
             avatar.setImageResource(R.drawable.ic_launcher_foreground)
         }
-        with(binding.gallery) {
-            //
-        }
+
+        adapter.data = List(11) { "" }
     }
 
 }
