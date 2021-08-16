@@ -24,7 +24,7 @@
         android:id="@+id/naviation_profile"
         android:name="com.gokimpark.instaclone.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile"
+        tools:layout="@layout/view_profile"
         />
 
 </navigation>

@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.viewholder
+package com.gokimpark.instaclone.ui.profile
 
 import android.content.Context
 import android.text.SpannableString
@@ -13,7 +13,7 @@ class ProfileStatisticView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
-    val binding = ViewProfileStatisticBinding.inflate(LayoutInflater.from(context), this)
+    private val binding = ViewProfileStatisticBinding.inflate(LayoutInflater.from(context), this)
 
 
     fun setData(figure: String, description: String) {

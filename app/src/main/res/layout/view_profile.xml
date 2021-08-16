@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<merge
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment"
+    tools:parentTag="com.gokimpark.instaclone.ui.profile.ProfileView"
     >
 
     <include
         android:id="@+id/header"
-        layout="@layout/fragment_profile_header"
+        layout="@layout/view_profile_header"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,4 +20,4 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</merge>
