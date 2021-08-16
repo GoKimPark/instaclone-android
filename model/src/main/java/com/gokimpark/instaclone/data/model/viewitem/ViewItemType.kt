@@ -3,7 +3,7 @@ package com.gokimpark.instaclone.data.model.viewitem
 import kotlin.reflect.KClass
 
 
-enum class ViewItemType(val model: KClass<out Any>) {
+enum class ViewItemType(val model: KClass<out ViewItem>) {
 
     UNKNOWN(ViewItem::class),
 
