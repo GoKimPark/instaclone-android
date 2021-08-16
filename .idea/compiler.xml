@@ -4,6 +4,8 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Instaclone.app" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
