@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import com.gokimpark.instaclone.R
-import com.gokimpark.instaclone.data.model.viewitem.Profile
+import com.gokimpark.instaclone.domain.model.viewitem.Profile
 import com.gokimpark.instaclone.databinding.ViewProfileBinding
 
 class ProfileView @JvmOverloads constructor(

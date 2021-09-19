@@ -3,8 +3,8 @@ package com.gokimpark.instaclone.ui.common
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gokimpark.instaclone.viewholder.createViewHolder
-import com.gokimpark.instaclone.data.model.viewitem.ViewItem
-import com.gokimpark.instaclone.data.model.viewitem.ViewItemType
+import com.gokimpark.instaclone.domain.model.viewitem.ViewItem
+import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType
 
 
 class GeneralRecyclerViewAdapter : RecyclerView.Adapter<GeneralViewHolder>() {

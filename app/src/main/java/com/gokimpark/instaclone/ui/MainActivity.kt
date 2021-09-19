@@ -8,6 +8,8 @@ import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.Volley
 import com.gokimpark.instaclone.R
 import com.gokimpark.instaclone.databinding.ActivityMainBinding
 import com.gokimpark.instaclone.ui.dashboard.DashboardFragment
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private var fragmentIndex = 0
 
     private lateinit var fragments: List<Pair<String, Fragment>>
+
+    private val requestQueue by lazy { Volley.newRequestQueue(this) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

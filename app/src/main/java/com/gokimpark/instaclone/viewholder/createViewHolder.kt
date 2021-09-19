@@ -1,8 +1,8 @@
 package com.gokimpark.instaclone.viewholder
 
 import android.view.ViewGroup
-import com.gokimpark.instaclone.data.model.viewitem.ViewItemType
-import com.gokimpark.instaclone.data.model.viewitem.ViewItemType.*
+import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType
+import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType.*
 import com.gokimpark.instaclone.ui.common.GeneralViewHolder
 
 

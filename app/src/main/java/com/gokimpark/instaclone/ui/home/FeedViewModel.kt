@@ -3,8 +3,8 @@ package com.gokimpark.instaclone.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.gokimpark.instaclone.data.model.viewitem.Post
-import com.gokimpark.instaclone.data.model.viewitem.ViewItemType
+import com.gokimpark.instaclone.domain.model.viewitem.Post
+import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType
 
 
 class FeedViewModel : ViewModel() {
