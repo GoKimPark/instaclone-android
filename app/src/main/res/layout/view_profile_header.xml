@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-    tools:context=".ui.profile.ProfileFragment"
+    tools:context=".app.ui.profile.ProfileFragment"
     >
 
     <ImageView
@@ -18,7 +18,7 @@
         tools:src="@tools:sample/avatars"
         />
 
-    <com.gokimpark.instaclone.ui.profile.ProfileStatisticView
+    <com.gokimpark.instaclone.app.ui.profile.ProfileStatisticView
         android:id="@+id/post_count"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         />
 
-    <com.gokimpark.instaclone.ui.profile.ProfileStatisticView
+    <com.gokimpark.instaclone.app.ui.profile.ProfileStatisticView
         android:id="@+id/follower_count"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         />
 
-    <com.gokimpark.instaclone.ui.profile.ProfileStatisticView
+    <com.gokimpark.instaclone.app.ui.profile.ProfileStatisticView
         android:id="@+id/following_count"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.viewholder
+package com.gokimpark.instaclone.app.viewholder
 
 import android.content.Context
 import android.util.AttributeSet

@@ -1,20 +1,17 @@
-package com.gokimpark.instaclone.ui
+package com.gokimpark.instaclone.app.ui
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.forEachIndexed
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
-import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 import com.gokimpark.instaclone.R
 import com.gokimpark.instaclone.databinding.ActivityMainBinding
-import com.gokimpark.instaclone.ui.dashboard.DashboardFragment
-import com.gokimpark.instaclone.ui.home.HomeFragment
-import com.gokimpark.instaclone.ui.notifications.NotificationsFragment
+import com.gokimpark.instaclone.app.ui.dashboard.DashboardFragment
+import com.gokimpark.instaclone.app.ui.home.HomeFragment
+import com.gokimpark.instaclone.app.ui.notifications.NotificationsFragment
 
 class MainActivity : AppCompatActivity() {
 

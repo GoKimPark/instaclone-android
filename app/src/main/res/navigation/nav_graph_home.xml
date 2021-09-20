@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_feed"
-        android:name="com.gokimpark.instaclone.ui.home.FeedFragment"
+        android:name="com.gokimpark.instaclone.app.ui.home.FeedFragment"
         android:label="@string/title_feed"
         tools:layout="@layout/fragment_feed"
         >
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/naviation_profile"
-        android:name="com.gokimpark.instaclone.ui.profile.ProfileFragment"
+        android:name="com.gokimpark.instaclone.app.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/view_profile"
         />

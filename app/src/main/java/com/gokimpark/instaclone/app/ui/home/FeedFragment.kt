@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.ui.home
+package com.gokimpark.instaclone.app.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

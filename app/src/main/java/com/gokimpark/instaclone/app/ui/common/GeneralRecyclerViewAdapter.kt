@@ -1,8 +1,8 @@
-package com.gokimpark.instaclone.ui.common
+package com.gokimpark.instaclone.app.ui.common
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.gokimpark.instaclone.viewholder.createViewHolder
+import com.gokimpark.instaclone.app.viewholder.createViewHolder
 import com.gokimpark.instaclone.domain.model.viewitem.ViewItem
 import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType
 

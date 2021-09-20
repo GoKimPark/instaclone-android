@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.ui.notifications
+package com.gokimpark.instaclone.app.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

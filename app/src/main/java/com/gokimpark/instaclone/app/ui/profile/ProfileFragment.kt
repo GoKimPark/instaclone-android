@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.ui.profile
+package com.gokimpark.instaclone.app.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater

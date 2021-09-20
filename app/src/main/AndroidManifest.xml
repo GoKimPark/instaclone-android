@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Instaclone">
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.gokimpark.instaclone.app.ui.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

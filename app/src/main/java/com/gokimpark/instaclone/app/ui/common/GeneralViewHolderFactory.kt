@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.ui.common
+package com.gokimpark.instaclone.app.ui.common
 
 import android.view.ViewGroup
 

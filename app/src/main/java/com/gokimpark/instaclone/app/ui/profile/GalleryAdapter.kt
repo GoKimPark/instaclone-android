@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.ui.profile
+package com.gokimpark.instaclone.app.ui.profile
 
 import android.view.ViewGroup
 import android.widget.ImageView

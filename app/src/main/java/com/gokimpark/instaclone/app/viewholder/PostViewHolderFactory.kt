@@ -1,9 +1,9 @@
-package com.gokimpark.instaclone.viewholder
+package com.gokimpark.instaclone.app.viewholder
 
 import android.view.ViewGroup
 import com.gokimpark.instaclone.domain.model.viewitem.ViewItem
-import com.gokimpark.instaclone.ui.common.GeneralViewHolder
-import com.gokimpark.instaclone.ui.common.GeneralViewHolderFactory
+import com.gokimpark.instaclone.app.ui.common.GeneralViewHolder
+import com.gokimpark.instaclone.app.ui.common.GeneralViewHolderFactory
 
 
 object PostViewHolderFactory : GeneralViewHolderFactory() {

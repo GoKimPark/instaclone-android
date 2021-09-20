@@ -1,4 +1,4 @@
-package com.gokimpark.instaclone.ui.home
+package com.gokimpark.instaclone.app.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
