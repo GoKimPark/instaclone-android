@@ -7,6 +7,8 @@ import com.gokimpark.instaclone.data.datasource.ProfileJsonRequest
 import com.gokimpark.instaclone.domain.model.viewitem.Profile
 import com.gokimpark.instaclone.domain.repository.ProfileRepository
 import com.google.gson.Gson
+import java.net.URLDecoder
+import java.net.URLEncoder
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(
@@ -15,14 +17,14 @@ class ProfileRepositoryImpl @Inject constructor(
 ) : ProfileRepository {
 
     override fun getProfileByUserName(userName: String, callback: (Profile) -> Unit, errorCallback: (String) -> Unit) {
-        val url = "${InstacloneApiConfigs.PROFILE_SERVICE_URL}/${userName}"
+        val url = "${InstacloneApiConfigs.PROFILE_SERVICE_URL}/${URLEncoder.encode(userName, "utf-8")}"
         val request = ProfileJsonRequest(gson, url, callback, errorCallback)
         requestQueue.add(request)
     }
 
 
     override fun getProfileByPath(path: String, callback: (Profile) -> Unit, errorCallback: (String) -> Unit) {
-        val url = "${InstacloneApiConfigs.BASE_URL}/${path}"
+        val url = "${InstacloneApiConfigs.BASE_URL}${path}"
         val request = ProfileJsonRequest(gson, url, callback, errorCallback)
         requestQueue.add(request)
     }

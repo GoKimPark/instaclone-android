@@ -1,5 +1,6 @@
 package com.gokimpark.instaclone.data.datasource
 
+import android.util.Log
 import com.android.volley.NetworkResponse
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonRequest
@@ -21,7 +22,8 @@ class ProfileJsonRequest(
 ) {
 
     override fun parseNetworkResponse(response: NetworkResponse): Response<ProfileResponseDto> {
-        val s = response.data.toString()
+        val s = response.data.decodeToString()
+        Log.d("profile", s)
         val dto = gson.fromJson(s, ProfileResponseDto::class.java)
         return Response.success(dto, null)
     }

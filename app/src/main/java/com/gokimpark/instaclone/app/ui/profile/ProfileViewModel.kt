@@ -1,5 +1,6 @@
 package com.gokimpark.instaclone.app.ui.profile
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -45,7 +46,7 @@ class ProfileViewModel @Inject constructor(
         profileUseCase.getProfile(
             user = user,
             callback = { _profile.postValue(it) },
-            errorCallback = { }
+            errorCallback = { Log.d("profile", it) }
         )
     }
 
