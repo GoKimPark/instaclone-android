@@ -1,13 +1,18 @@
 package com.gokimpark.instaclone.data.mapper
 
 import com.gokimpark.instaclone.data.dto.ProfileDto
+import com.gokimpark.instaclone.domain.model.User
 import com.gokimpark.instaclone.domain.model.viewitem.Profile
 
 
 fun ProfileDto.toProfile() = Profile(
     viewItemType = viewItemType.toViewItemTypeEnum(),
-    nickname = nickname ?: "",
-    avatarUrl = avatarUrl ?: "",
+    user = User(
+        userName = userName ?: "",
+        displayName = displayName ?: "",
+        avatarUrl = avatarUrl ?: "",
+        profilePath = ""
+    ),
     postCount = postCount ?: "",
     followerCount = followerCount ?: "",
     followingCount = followingCount ?: "",

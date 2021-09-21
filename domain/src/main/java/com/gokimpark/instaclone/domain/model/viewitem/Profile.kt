@@ -1,10 +1,11 @@
 package com.gokimpark.instaclone.domain.model.viewitem
 
+import com.gokimpark.instaclone.domain.model.User
+
 
 class Profile(
     viewItemType: ViewItemType = ViewItemType.UNKNOWN,
-    val nickname: String = "",
-    val avatarUrl: String = "",
+    val user: User,
     val postCount: String = "",
     val followerCount: String = "",
     val followingCount: String = "",

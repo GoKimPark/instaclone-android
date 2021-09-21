@@ -1,23 +1,14 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm'
-    id 'java-library'
 }
 
 version 'unspecified'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     implementation project(":utility")
+    compileClasspath "javax.inject:javax.inject:1"
 }
 
 test {
     useJUnitPlatform()
-}
-
-java {
-    targetCompatibility = JavaVersion.VERSION_1_8
-    sourceCompatibility = JavaVersion.VERSION_1_8
 }

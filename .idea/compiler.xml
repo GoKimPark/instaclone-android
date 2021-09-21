@@ -6,6 +6,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="Instaclone.app" target="11" />
+      <module name="Instaclone.data" target="11" />
+      <module name="Instaclone.domain" target="11" />
+      <module name="Instaclone.domain.main" target="11" />
+      <module name="Instaclone.domain.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

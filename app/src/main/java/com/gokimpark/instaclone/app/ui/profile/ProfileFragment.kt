@@ -6,13 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
-    private lateinit var profileViewModel: ProfileViewModel
+    private val profileViewModel: ProfileViewModel by viewModels({ parentFragment ?: this })
 
     private var _view: ProfileView? = null
     private val view get() = _view!!
@@ -23,16 +25,15 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         _view = ProfileView(requireContext())
 
         activity?.run {
-            onBackPressedDispatcher.addCallback(this) {
+            onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
                 parentFragment?.run { findNavController().popBackStack() }
             }
         }
 
-        profileViewModel.profile.observe(this) { view.setData(it) }
+        profileViewModel.profile.observe(viewLifecycleOwner) { view.setData(it) }
 
         return view
     }

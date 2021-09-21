@@ -3,7 +3,8 @@ package com.gokimpark.instaclone.data.dto
 
 class ProfileDto(
     viewItemType: String? = null,
-    val nickname: String? = null,
+    val userName: String? = null,
+    val displayName: String? = null,
     val avatarUrl: String? = null,
     val postCount: String? = null,
     val followerCount: String? = null,

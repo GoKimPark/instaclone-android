@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 version 'unspecified'
@@ -36,15 +38,13 @@ android {
 }
 
 dependencies {
-    implementation project(":utility")
+    implementation project(':utility')
     implementation project(':domain')
 
-    implementation 'androidx.core:core-ktx:1.6.0'
-    api 'com.android.volley:volley:1.2.1'
-    implementation 'com.google.code.gson:gson:2.8.8'
-}
+    api "androidx.core:core-ktx:1.6.0"
+    api "com.android.volley:volley:1.2.1"
+    api "com.google.code.gson:gson:2.8.8"
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    api "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 }

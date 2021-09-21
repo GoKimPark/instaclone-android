@@ -1,11 +1,11 @@
 package com.gokimpark.instaclone.domain.model.viewitem
 
+import com.gokimpark.instaclone.domain.model.User
+
 
 class Post(
     viewItemType: ViewItemType = ViewItemType.UNKNOWN,
-    val authorNickname: String = "",
-    val authorAvatarUrl: String = "",
-    val authorProfileUrl: String = "",
+    val author: User,
     val place: String = "",
     val mainImageUrl: String = "",
 ) : ViewItem(viewItemType)

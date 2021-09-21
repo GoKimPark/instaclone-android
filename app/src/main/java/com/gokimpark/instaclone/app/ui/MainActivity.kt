@@ -6,22 +6,26 @@ import androidx.core.view.forEachIndexed
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
-import com.android.volley.toolbox.Volley
 import com.gokimpark.instaclone.R
 import com.gokimpark.instaclone.databinding.ActivityMainBinding
 import com.gokimpark.instaclone.app.ui.dashboard.DashboardFragment
 import com.gokimpark.instaclone.app.ui.home.HomeFragment
 import com.gokimpark.instaclone.app.ui.notifications.NotificationsFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
     private var fragmentIndex = 0
 
-    private lateinit var fragments: List<Pair<String, Fragment>>
-
-    private val requestQueue by lazy { Volley.newRequestQueue(this) }
+    private val fragments: List<Pair<String, Fragment>> = listOf(
+        HomeFragment::class.qualifiedName!! to HomeFragment(),
+        DashboardFragment::class.qualifiedName!! to DashboardFragment(),
+        NotificationsFragment::class.qualifiedName!! to NotificationsFragment()
+    )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +36,6 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             fragmentIndex = savedInstanceState.getInt(BundleKey.FRAGMENT_INDEX.name)
         }
-
-        fragments = listOf(
-            HomeFragment::class.qualifiedName!! to HomeFragment(),
-            DashboardFragment::class.qualifiedName!! to DashboardFragment(),
-            NotificationsFragment::class.qualifiedName!! to NotificationsFragment()
-        )
 
         supportFragmentManager.commit {
             fragments.forEach {

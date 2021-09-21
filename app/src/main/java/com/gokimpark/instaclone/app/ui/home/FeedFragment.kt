@@ -4,16 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.gokimpark.instaclone.R
+import com.gokimpark.instaclone.app.ui.profile.ProfileViewModel
 import com.gokimpark.instaclone.databinding.FragmentFeedBinding
+import com.gokimpark.instaclone.domain.model.User
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class FeedFragment : NavHostFragment() {
 
-    private lateinit var feedViewModel: FeedViewModel
+    private val feedViewModel: FeedViewModel by viewModels()
+    private val profileViewModel: ProfileViewModel by viewModels()
 
     // https://developer.android.com/topic/libraries/view-binding#fragments
     private var _binding: FragmentFeedBinding? = null
@@ -25,15 +30,14 @@ class FeedFragment : NavHostFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        feedViewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
 
-        feedViewModel.post.observe(this) { post ->
+        feedViewModel.post.observe(viewLifecycleOwner) { post ->
             with(binding.postView.binding.header) {
-                authorNickname.text = post.authorNickname
-                authorNickname.setOnClickListener { landToProfileFragment(post.authorProfileUrl) }
+                authorNickname.text = post.author.displayName
+                authorNickname.setOnClickListener { landToProfileFragment(post.author) }
                 authorAvatar.setImageResource(R.drawable.ic_launcher_foreground)
-                authorAvatar.setOnClickListener { landToProfileFragment(post.authorProfileUrl) }
+                authorAvatar.setOnClickListener { landToProfileFragment(post.author) }
                 place.text = post.place
             }
             with(binding.postView.binding) {
@@ -45,7 +49,8 @@ class FeedFragment : NavHostFragment() {
     }
 
 
-    private fun landToProfileFragment(authorProfileUrl: String) {
+    private fun landToProfileFragment(user: User) {
+        profileViewModel.getProfile(user)
         parentFragment?.run { findNavController().navigate(R.id.action_navigation_feed_to_naviation_profile) }
     }
 
