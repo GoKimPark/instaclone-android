@@ -19,28 +19,21 @@ class ProfileViewModel @Inject constructor(
 
     private val _profile = MutableLiveData(
         Profile(
-            viewItemType = ViewItemType.THUMBNAIL,
+            viewItemType = ViewItemType.UNKNOWN,
             user = User(
-                userName = "Test User Name",
-                displayName = "Test Display Name",
+                userName = "-",
+                displayName = "-",
                 avatarUrl = "",
                 profilePath = "",
             ),
-            followerCount = "16",
-            followingCount = "32",
-            postCount = "64",
-            tabs = listOf(
-                Profile.Tab(
-                    title = "Posts"
-                ),
-                Profile.Tab(
-                    title = "Tagged"
-                )
-            )
+            postCount = "-",
+            followerCount = "-",
+            followingCount = "-",
+            tabs = emptyList()
         )
     )
-
     val profile: LiveData<Profile> = _profile
+
 
     fun getProfile(user: User) {
         profileUseCase.getProfile(

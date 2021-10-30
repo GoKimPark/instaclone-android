@@ -31,7 +31,11 @@ class FeedFragment : NavHostFragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         feedViewModel.post.observe(viewLifecycleOwner) { post ->
             with(binding.postView.binding.header) {
                 authorNickname.text = post.author.displayName
@@ -44,14 +48,13 @@ class FeedFragment : NavHostFragment() {
                 mainImage.setImageResource(R.drawable.ic_launcher_background)
             }
         }
-
-        return binding.root
     }
 
 
     private fun landToProfileFragment(user: User) {
         profileViewModel.getProfile(user)
-        parentFragment?.run { findNavController().navigate(R.id.action_navigation_feed_to_naviation_profile) }
+        val direction = FeedFragmentDirections.actionNavigationFeedToNaviationProfile(user.userName)
+        parentFragment?.run { findNavController().navigate(direction) }
     }
 
 

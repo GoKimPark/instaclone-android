@@ -25,6 +25,13 @@
         android:name="com.gokimpark.instaclone.app.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/view_profile"
-        />
+        >
+
+        <argument
+            android:name="user"
+            app:argType="string"
+            />
+
+    </fragment>
 
 </navigation>
