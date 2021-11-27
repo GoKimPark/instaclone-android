@@ -3,10 +3,11 @@ package com.gokimpark.instaclone.data.mapper
 import com.gokimpark.instaclone.data.dto.ProfileDto
 import com.gokimpark.instaclone.domain.model.User
 import com.gokimpark.instaclone.domain.model.viewitem.Profile
+import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType
 
 
 fun ProfileDto.toProfile() = Profile(
-    viewItemType = viewItemType.toViewItemTypeEnum(),
+    viewItemType = viewItemType ?: ViewItemType.UNKNOWN,
     user = User(
         userName = userName ?: "",
         displayName = displayName ?: "",
@@ -22,5 +23,5 @@ fun ProfileDto.toProfile() = Profile(
 
 fun ProfileDto.TabDto.toTab() = Profile.Tab(
     iconUrl = iconUrl ?: "",
-    title = title ?: "",
+    contentUrl = contentUrl ?: "",
 )

@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.gokimpark.instaclone.R
 import com.gokimpark.instaclone.app.ui.profile.ProfileViewModel
+import com.gokimpark.instaclone.app.utility.loadInCircle
 import com.gokimpark.instaclone.databinding.FragmentFeedBinding
 import com.gokimpark.instaclone.domain.model.User
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,7 +41,7 @@ class FeedFragment : NavHostFragment() {
             with(binding.postView.binding.header) {
                 authorNickname.text = post.author.displayName
                 authorNickname.setOnClickListener { landToProfileFragment(post.author) }
-                authorAvatar.setImageResource(R.drawable.ic_launcher_foreground)
+                authorAvatar.loadInCircle(post.author.avatarUrl)
                 authorAvatar.setOnClickListener { landToProfileFragment(post.author) }
                 place.text = post.place
             }

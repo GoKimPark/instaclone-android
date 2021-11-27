@@ -46,6 +46,9 @@ class ProfileFragment : Fragment() {
         profileViewModel.profile.observe(viewLifecycleOwner) {
             this.view.setData(it)
         }
+        profileViewModel.thumbnails.observe(viewLifecycleOwner) {
+            this.view.setGallery(it)
+        }
 
         activity?.run {
             onBackPressedDispatcher.addCallback(viewLifecycleOwner) {

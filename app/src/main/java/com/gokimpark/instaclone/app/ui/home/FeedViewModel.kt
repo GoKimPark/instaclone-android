@@ -17,15 +17,14 @@ class FeedViewModel @Inject constructor() : ViewModel() {
         Post(
             viewItemType = ViewItemType.POST,
             author = User(
-                userName = "Author's userName",
-                displayName = "Author's displayName",
-                avatarUrl = "",
+                userName = "user1",
+                displayName = "user1's displayName",
+                avatarUrl = "https://images.unsplash.com/photo-1565038941323-e5ceac0fcde2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80",
                 profilePath = "",
             ),
             place = "Place"
         )
     )
-
     val post: LiveData<Post> = _post
 
 }

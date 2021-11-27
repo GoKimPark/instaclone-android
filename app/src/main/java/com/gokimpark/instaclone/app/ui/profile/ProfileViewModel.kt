@@ -4,11 +4,14 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.gokimpark.instaclone.domain.model.User
 import com.gokimpark.instaclone.domain.model.viewitem.Profile
+import com.gokimpark.instaclone.domain.model.viewitem.Thumbnail
 import com.gokimpark.instaclone.domain.model.viewitem.ViewItemType
 import com.gokimpark.instaclone.domain.usecase.ProfileUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -33,6 +36,18 @@ class ProfileViewModel @Inject constructor(
         )
     )
     val profile: LiveData<Profile> = _profile
+
+
+    private val _thumbnails = MutableLiveData<List<Thumbnail>>(emptyList()).apply {
+        profile.observeForever {
+            if (it.tabs.isNotEmpty()) {
+                viewModelScope.launch {
+                    postValue(profileUseCase.getTabContents(it.tabs.first()))
+                }
+            }
+        }
+    }
+    val thumbnails: LiveData<List<Thumbnail>> = _thumbnails
 
 
     fun getProfile(user: User) {

@@ -3,7 +3,9 @@ package com.gokimpark.instaclone.data.di
 import android.content.Context
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
+import com.gokimpark.instaclone.data.repositoryimpl.GalleryRepositoryImpl
 import com.gokimpark.instaclone.data.repositoryimpl.ProfileRepositoryImpl
+import com.gokimpark.instaclone.domain.repository.GalleryRepository
 import com.gokimpark.instaclone.domain.repository.ProfileRepository
 import com.gokimpark.instaclone.domain.usecase.ProfileUseCase
 import com.gokimpark.instaclone.domain.usecase.ProfileUseCaseImpl
@@ -35,8 +37,16 @@ class DataProvidingModule {
 
     @Provides
     @Singleton
+    fun provideGalleryRepository(
+        requestQueue: RequestQueue,
+        gson: Gson
+    ): GalleryRepository = GalleryRepositoryImpl(requestQueue, gson)
+
+    @Provides
+    @Singleton
     fun provideProfileUseCase(
-        profileRepository: ProfileRepository
-    ): ProfileUseCase = ProfileUseCaseImpl(profileRepository)
+        profileRepository: ProfileRepository,
+        galleryRepository: GalleryRepository
+    ): ProfileUseCase = ProfileUseCaseImpl(profileRepository, galleryRepository)
 
 }

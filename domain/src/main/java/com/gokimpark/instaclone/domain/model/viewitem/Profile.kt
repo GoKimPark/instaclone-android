@@ -14,7 +14,7 @@ class Profile(
 
     class Tab(
         val iconUrl: String = "",
-        val title: String = "",
+        val contentUrl: String = "",
     )
 
 }
